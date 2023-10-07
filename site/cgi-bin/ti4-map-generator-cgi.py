@@ -221,8 +221,8 @@ def return_stats(args):
             "{:.3f}".format(galaxy["scores"][race]["res_inf"]),
             "{:.3f}".format(galaxy["scores"][race]["first_turn"])
         ])
-    print "<h3>Resource shares by race</h3>"
-    print create_html_table("score_stats", score_data)
+    print ("<h3>Resource shares by race</h3>")
+    print (create_html_table("score_stats", score_data))
 
     stake_data = [["Tile"] + [r for r in races]]
     tiles = galaxy["stakes"].keys()
@@ -236,11 +236,11 @@ def return_stats(args):
             except KeyError:
                 row.append(0.0)
         stake_data.append(row)
-    print "<h3>Race stakes in each system</h3>"
-    print create_html_table("stake_stats", stake_data)
+    print ("<h3>Race stakes in each system</h3>")
+    print (create_html_table("stake_stats", stake_data))
 
-    print "<h3>Debug galaxy json data</h3>"
-    print json.dumps(galaxy)
+    print ("<h3>Debug galaxy json data</h3>")
+    print (json.dumps(galaxy))
 
 
 
